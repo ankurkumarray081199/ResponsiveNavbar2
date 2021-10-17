@@ -1,0 +1,100 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  min-height: 100vh;
+  width: 100%;
+}
+
+.sidebar {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  bottom: 20px;
+  width: 75px;
+  background: pink;
+  border-radius: 12px;
+  overflow-x: hidden;
+}
+.sidebar.active {
+  width: 250px;
+}
+.sidebar ul {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  padding-top: 30px;
+  padding-left: 8px;
+}
+.sidebar ul li {
+  position: relative;
+  list-style: none;
+  width: 100%;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+.sidebar ul li.active {
+  background: #fff;
+}
+.sidebar ul li a {
+  position: relative;
+  display: block;
+  text-decoration: none;
+  width: 100%;
+  display: flex;
+}
+.sidebar ul li a i {
+  position: relative;
+  display: block;
+  text-align: center;
+  height: 60px;
+  min-width: 60px;
+  line-height: 60px;
+}
+.sidebar ul li a i.bx {
+  font-size: 25px;
+}
+.sidebar ul li a .link_name {
+  position: relative;
+  display: block;
+  padding-left: 10px;
+  height: 60px;
+  font-size: 20px;
+  line-height: 60px;
+  white-space: normal;
+}
+
+.toggle {
+  position: absolute;
+  left: 90px;
+  top: 50px;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  transition: 0.4s;
+  background: pink;
+}
+.toggle.active {
+  left: 265px;
+  background: rgb(240, 45, 78);
+}
+.toggle i {
+  position: absolute;
+  font-size: 25px;
+  display: none;
+}
+.toggle i.bx-menu,
+.toggle.toggle.active i.bx-window-close {
+  display: block;
+}
+.toggle i.bx-window-close,
+.toggle.active i.bx-menu {
+  display: none;
+}

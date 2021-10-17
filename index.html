@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <title>SideNavBar</title>
+</head>
+
+<body>
+    <div class="sidebar">
+        <ul class="nav-list">
+            <li class="list active"><a href="#">
+                    <i class='bx bx-home'></i>
+                    <span class="link_name">Home</span>
+                </a></li>
+            <li class="list"><a href="#">
+                    <i class='bx bx-user'></i>
+                    <span class="link_name">Profile</span>
+                </a></li>
+            <li class="list"><a href="#">
+                    <i class='bx bx-message-rounded-dots'></i>
+                    <span class="link_name">Messages</span>
+                </a></li>
+            <li class="list"><a href="#">
+                    <i class='bx bx-cog'></i>
+                    <span class="link_name">Setting</span>
+                </a></li>
+            <li class="list"><a href="#">
+                    <i class='bx bx-help-circle'></i>
+                    <span class="link_name">Help</span>
+                </a></li>
+            <li class="list"><a href="#">
+                    <i class='bx bx-lock-alt'></i>
+                    <span class="link_name">Password</span>
+                </a></li>
+            <li class="list"><a href="#">
+                    <i class='bx bx-log-out'></i>
+                    <span class="link_name">Sign Out</span>
+                </a></li>
+        </ul>
+    </div>
+    <div class="toggle">
+        <i class='bx bx-menu'></i>
+        <i class='bx bx-window-close'></i>
+    </div>
+</body>
+<script>
+    //toggle event
+    let toggleMenu = document.querySelector('.toggle');
+    let sidebar=document.querySelector('.sidebar')
+    toggleMenu.onclick = function () {
+        toggleMenu.classList.toggle('active');
+        sidebar.classList.toggle('active');
+    }
+</script>
+<script>
+    //add active class for list select
+    let list = document.querySelectorAll('.list')
+
+    for (let i = 0; i < list.length; i++) {
+        list[i].onclick = function () {
+            let j = 0;
+            while (j < list.length) {
+                list[j++].className = 'list';
+            }
+            list[i].className = 'list active';
+        }
+
+    }
+</script>
+
+</html>
